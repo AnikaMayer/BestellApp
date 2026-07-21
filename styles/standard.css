@@ -4,8 +4,6 @@
     box-sizing: border-box;
     scroll-behavior: smooth;
     position: relative;
-    font-family: "Palanquin";
-    color: var(--font-color);
 }
 
 html {
