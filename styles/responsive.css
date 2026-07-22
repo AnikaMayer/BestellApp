@@ -2,4 +2,8 @@
     .header_main {
         padding: 0px max(40px, calc(50% - 720px)) 0px max(120px, calc(50% - 720px));
     }
+
+    main {
+        padding: 0px max(0px, calc(50% - 720px));
+    }
 }
