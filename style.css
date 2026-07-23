@@ -131,6 +131,46 @@ main {
     }
 }
 
+.header_section {
+    background-color: var(--background-color-theme);
+    margin-bottom: 80px;
+    height: 60px;
+    width: 100%;
+    display: flex;
+    align-items: flex-end;
+    gap: 28px;
+    padding-inline: 167px;
+
+    img {
+        height: 91px;
+        width: auto;
+    }
+
+    .headline_category {
+        height: 60px;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        h2 {
+            font-weight: 700;
+            font-size: 2.5rem;
+            color: var(--font-color-light);
+
+            span {
+                font-weight: 400;
+            }
+        }
+    }
+}
+
+.dishes {
+    height: auto;
+    width: 713px;
+    padding-left: 120px;
+}
+
 .footer_main {
     height: var(--height-header-footer);
     width: 100%;
