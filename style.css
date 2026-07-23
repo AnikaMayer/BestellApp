@@ -131,11 +131,17 @@ main {
     }
 }
 
+.menu_section {
+    height: auto;
+    width: 100%;
+    padding-bottom: 40px;
+}
+
 .header_section {
     background-color: var(--background-color-theme);
-    margin-bottom: 80px;
     height: 60px;
     width: 100%;
+    margin-bottom: 27px;
     display: flex;
     align-items: flex-end;
     gap: 28px;
@@ -167,8 +173,74 @@ main {
 
 .dishes {
     height: auto;
-    width: 713px;
+    width: 100%;
     padding-left: 120px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    article {
+        height: 141px;
+        width: 713px;
+        border-radius: 12px;
+        background-color: var(--background-color-light);
+        display: flex;
+        gap: 15px;
+        padding: 10px;
+
+        .dish_image {
+            height: 120px;
+            width: 207px;
+            border-radius: 12px;
+
+            img {
+                height: 120px;
+                width: 207px;
+                border-radius: 12px;
+                object-fit: cover;
+            }
+        }
+
+        .dish_info {
+            height: 107px;
+            width: 469px;
+            display: flex;
+
+            .dish_title {
+                height: 100%;
+                width: 354px;
+                display: flex;
+                flex-direction: column;
+                gap: 8px;
+
+                h3 {
+                    font-weight: 600;
+                    font-size: 1.5rem;
+                    line-height: 100%;
+                }
+
+                p {
+                    font-weight: 500;
+                    font-size: 1rem;
+                    width: 339px;
+                }
+            }
+
+            .dish_price_add {
+                height: 100%;
+                width: 115px;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                align-items: flex-end;
+
+                p {
+                    font-weight: 600;
+                    font-size: 1.5rem;
+                }
+            }
+        }
+    }
 }
 
 .footer_main {

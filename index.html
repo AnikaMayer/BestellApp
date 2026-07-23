@@ -23,7 +23,7 @@
             type="image/x-icon"
         />
     </head>
-    <body>
+    <body onload="init()">
         <header class="header_main">
             <img
                 class="logo_main"
@@ -58,32 +58,32 @@
                     <p>The best of Burgers, Pizza, and Greens, all in one great place.</p>
                 </div>
             </section>
-            <section class="burger_section">
+            <section class="menu_section">
                 <header class="header_section">
                     <img src="./assets/icons/burger_icon.svg" alt="Burger Icon" />
                     <div class="headline_category">
                         <h2>Burger & Sandwiches</h2>
                     </div>
                 </header>
-                <article id="dishes_burger" class="dishes"></article>
+                <section id="dishes_burger" class="dishes"></section>
             </section>
-            <section class="pizza_section">
+            <section class="menu_section">
                 <header class="header_section">
                     <img src="./assets/icons/pizza_icon.svg" alt="Pizza Icon" />
                     <div class="headline_category">
                         <h2>Pizza <span>(30cm)</span></h2>
                     </div>
                 </header>
-                <article id="dishes_pizza" class="dishes"></article>
+                <section id="dishes_pizza" class="dishes"></section>
             </section>
-            <section class="salad_section">
+            <section class="menu_section">
                 <header class="header_section">
                     <img src="./assets/icons/salad_icon.svg" alt="Salad Icon" />
                     <div class="headline_category">
                         <h2>Salad</h2>
                     </div>
                 </header>
-                <article id="dishes_salad" class="dishes"></article>
+                <section id="dishes_salad" class="dishes"></section>
             </section>
         </main>
         <footer class="footer_main">
