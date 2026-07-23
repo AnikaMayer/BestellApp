@@ -34,93 +34,99 @@ main {
 }
 
 .hero_section {
+    height: 580px;
+    max-width: 1440px;
+    margin-bottom: 52px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
     .hero_background {
         height: 508px;
         width: 100%;
-        max-width: 1440px;
-        background-image: url(./assets/img/hero_background_img.jpg);
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: cover;
-        position: absolute;
-        top: -59px;
+        transform: translateY(-15%);
+
+        .background_image {
+            height: 100%;
+            width: auto;
+            background-image: url(./assets/img/hero_background_img.jpg);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+
+            .burger_logo {
+                height: auto;
+                width: clamp(120px, calc(97.143px + 7.143vw), 200px);
+                border-radius: 50%;
+                box-shadow: 2px 4px 4px 0px rgba(0, 0, 0, 0.25);
+                transform: translateY(35%);
+                border: 13px solid var(--background-color-light);
+            }
+        }
     }
 
     .hero_content {
-        height: auto;
-        width: 100%;
+        height: 104px;
+        width: 872px;
         display: flex;
-        align-items: center;
-        justify-content: center;
         flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
         gap: 22px;
-        padding-inline: 284px;
-        position: absolute;
-        top: 304px;
 
-        .burger_logo {
-            height: 200px;
-            width: auto;
-            border-radius: 50%;
-            border: 13px solid var(--background-color-light);
-            box-shadow: 2px 4px 4px 0px rgba(0, 0, 0, 0.25);
+        .heading_box {
+            height: 75px;
+            width: 100%;
+            font-family: "Palanquin Dark";
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            gap: 26px;
+
+            h1 {
+                font-weight: 700;
+                font-size: clamp(2.5rem, calc(2.357rem + 0.714vw), 3rem);
+                line-height: 1;
+
+                .heading_highlight {
+                    color: var(--font-color-highlight);
+                }
+            }
+
+            .rating_box {
+                height: 32px;
+                width: 110px;
+                background-color: var(--background-color-rating);
+                border-radius: 4px;
+                padding: 4px 5px;
+                display: flex;
+                align-items: center;
+                gap: 8px;
+
+                img {
+                    height: auto;
+                    width: 24px;
+                }
+
+                p {
+                    font-size: 1.25rem;
+
+                    .ratings {
+                        font-family: "Palanquin";
+                        font-size: 1.125rem;
+                        color: var(--font-color-medium);
+                    }
+                }
+            }
         }
 
-        .heading_container {
-            width: 872px;
-            text-align: center;
-            display: flex;
-            flex-direction: column;
-            gap: 25px;
-            padding-bottom: clamp(32px, calc(26.286px + 1.786vw), 52px);
-
-            .heading_box {
-                width: 100%;
-                font-family: "Palanquin Dark";
-                display: flex;
-                justify-content: center;
-                gap: 26px;
-
-                h1 {
-                    font-weight: 700;
-                    font-size: clamp(2.5rem, calc(2.357rem + 0.714vw), 3rem);
-
-                    .heading_highlight {
-                        color: var(--font-color-highlight);
-                    }
-                }
-
-                .rating_box {
-                    height: 32px;
-                    width: 110px;
-                    background-color: var(--background-color-rating);
-                    border-radius: 4px;
-                    padding: 4px 5px;
-                    display: flex;
-                    align-items: center;
-                    gap: 8px;
-
-                    img {
-                        height: auto;
-                        width: 24px;
-                    }
-
-                    p {
-                        font-size: 1.25rem;
-
-                        .ratings {
-                            font-family: "Palanquin";
-                            font-size: 1.125rem;
-                            color: var(--font-color-medium);
-                        }
-                    }
-                }
-            }
-
-            > p {
-                font-weight: 700;
-                font-size: clamp(1.375rem, calc(1.339rem + 0.179vw), 1.5rem);
-            }
+        > p {
+            font-weight: 700;
+            font-size: clamp(1.375rem, calc(1.339rem + 0.179vw), 1.5rem);
         }
     }
 }
