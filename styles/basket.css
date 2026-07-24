@@ -1,0 +1,80 @@
+.basket_outer_box {
+    height: 0;
+    width: 0;
+    overflow: visible;
+    position: sticky;
+    top: 0;
+    right: 0;
+    left: 100%;
+    bottom: 100%;
+}
+
+.basket {
+    height: 794px;
+    width: 435px;
+    background-color: var(--background-color-dark);
+    padding-block: 60px;
+    padding-left: 30px;
+    padding-right: 60px;
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+    transform: translateX(-100%);
+    z-index: 1;
+}
+
+.basket_wrapper {
+    height: 676px;
+    width: 350px;
+    background-color: rgba(127, 255, 212, 0.185);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    gap: 36px;
+
+    h4 {
+        text-align: center;
+        font-weight: 700;
+        font-size: 2rem;
+        color: var(--font-color-basket);
+        line-height: 1;
+        background-color: rgba(165, 42, 42, 0.199);
+    }
+
+    .basket_content {
+        height: 100%;
+        width: 350px;
+        display: flex;
+        flex-direction: column;
+        gap: 36px;
+
+        .basket_items {
+            height: 355px;
+            width: 100%;
+            background-color: rgba(0, 0, 255, 0.226);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 72px;
+            text-align: center;
+
+            .empty_note {
+                font-weight: 500;
+                font-size: 1.5rem;
+                color: var(--font-color-basket);
+                line-height: 1.125;
+            }
+
+            .empty_basket {
+                height: 129px;
+                width: auto;
+            }
+        }
+
+        .basket_total {
+            height: 208px;
+            width: 100%;
+            background-color: rgba(255, 166, 0, 0.279);
+        }
+    }
+}
