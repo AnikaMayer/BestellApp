@@ -11,7 +11,7 @@ function renderBurgerTemplate(i) {
                     </div>
                     <div class="dish_price_add">
                         <p id="price_currency${i}">${numberToCurrency(dishes.burger[i].price)}</p>
-                        <button class="add_button" onclick="moveToBasket(${i})">Add to basket</button>
+                        <button class="add_button" onclick="moveBurgerToBasket(${i})">Add to basket</button>
                     </div>
                 </div>
             </article>
@@ -31,7 +31,7 @@ function renderPizzaTemplate(i) {
                     </div>
                     <div class="dish_price_add">
                         <p id="price_currency${i}">${numberToCurrency(dishes.pizza[i].price)}</p>
-                        <button class="add_button">Add to basket</button>
+                        <button class="add_button" onclick="movePizzaToBasket(${i})">Add to basket</button>
                     </div>
                 </div>
             </article>
@@ -51,7 +51,7 @@ function renderSaladTemplate(i) {
                     </div>
                     <div class="dish_price_add">
                         <p id="price_currency${i}">${numberToCurrency(dishes.salad[i].price)}</p>
-                        <button class="add_button">Add to basket</button>
+                        <button class="add_button" onclick="moveSaladToBasket(${i})">Add to basket</button>
                     </div>
                 </div>
             </article>
@@ -60,51 +60,53 @@ function renderSaladTemplate(i) {
 
 function renderEmptyBasketTemplate() {
     return /*html*/ `
-            <div class="basket_items">
+            <div class="empty_message">
                 <p class="empty_note">
                     Nothing here yet.<br />Go ahead and choose something
                     delicious!
                 </p>
-                 <img
+                <img
                     class="empty_basket"
                     src="./assets/icons/basket_icon_empty.svg"
                     alt="Empty Basket"
                 />
             </div>
-            <div class="basket_total"></div>
         `;
 }
 
 function renderBasketContentTemplate(j) {
     return /*html*/ `
-                <div class="basket_items">
-                    <div class="menu_title">
-                        <p>${basket.name}</p>
-                    </div>
-                    <div class="menu_info">
-                        <div>
-                            <img src="./assets/icons/trash_icon.svg" alt="Remove Icon">
-                            <button onclick="">-</button>
-                            <p>${basket.amount}</p>
-                            <button onclick="">+</button>
-                        </div>
-                        <p>${basket.price}</p>
-                    </div>
+            <div class="item_card">
+                <div class="menu_title">
+                    <p>${basket[j].name}</p>
                 </div>
-                <div class="basket_total">
-                    <div class="subtotal">
-                        <p>Subtotal</p>
-                        <p></p>
+                <div class="menu_info">
+                    <div>
+                        <img src="./assets/icons/trash_icon.svg" alt="Remove Icon">
+                        <button onclick="">-</button>
+                        <p>${basket[j].amount}</p>
+                        <button onclick="">+</button>
                     </div>
-                    <div class="delivery">
-                        <p>Delivery fee</p>
-                        <p></p>
-                    </div>
-                    <div class="total">
-                        <p>Total</p>
-                        <p></p>
-                    </div>
-                    <button>Buy now ()</button>
+                    <p>${basket[j].price}</p>
                 </div>
-            `;
+            </div>
+        `;
+}
+
+function renderBasketTotalTemplate() {
+    return /*html*/ `
+            <div class="subtotal">
+                <p>Subtotal</p>
+                <p></p>
+            </div>
+            <div class="delivery">
+                <p>Delivery fee</p>
+                <p></p>
+            </div>
+            <div class="total">
+                <p>Total</p>
+                <p></p>
+            </div>
+            <button onclick="">Buy now ()</button>
+        `;
 }
