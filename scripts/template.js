@@ -82,12 +82,14 @@ function renderBasketContentTemplate(j) {
                 </div>
                 <div class="menu_info">
                     <div>
-                        <img src="./assets/icons/trash_icon.svg" alt="Remove Icon">
+                        <button onclick="">
+                            <img src="./assets/icons/trash_icon.svg" alt="Remove Icon">
+                        </button>
                         <button onclick="">-</button>
                         <p>${basket[j].amount}</p>
                         <button onclick="">+</button>
                     </div>
-                    <p>${basket[j].price}</p>
+                    <p id="item_price${j}"></p>
                 </div>
             </div>
         `;
@@ -109,4 +111,24 @@ function renderBasketTotalTemplate() {
             </div>
             <button onclick="">Buy now ()</button>
         `;
+}
+
+function renderDishesTemplate(category, i) {
+    return /*html*/ `
+        <article>
+                <div class="dish_image">
+                    <img src="./${dishes[category][i].path}" alt="Image of ${dishes[category][i].name}">
+                </div>
+                <div class="dish_info">
+                    <div class="dish_title">
+                        <h3>${dishes[category][i].name}</h3>
+                        <p>${dishes[category][i].description}</p>
+                    </div>
+                    <div class="dish_price_add">
+                        <p id="price_currency${i}">${numberToCurrency(dishes[category][i].price)}</p>
+                        <button class="add_button" onclick="moveSaladToBasket(${i})">Add to basket</button>
+                    </div>
+                </div>
+            </article>
+    `;
 }
