@@ -38,7 +38,7 @@ function numberToCurrency(price) {
 }
 
 function renderBasketContent(i) {
-    basketContentRef = document.getElementById("basket_content_box");
+    basketContentRef = document.getElementById("basket_content");
     basketContentRef.innerHTML = "";
     if (basket.length === 0) {
         basketContentRef.innerHTML = renderEmptyBasketTemplate();
@@ -46,10 +46,16 @@ function renderBasketContent(i) {
         for (let j = 0; j < basket.length; j++) {
             basketContentRef.innerHTML += renderBasketContentTemplate(j);
         }
+        renderBasketTotal();
     }
 }
 
-function moveToBasket(i) {
+function renderBasketTotal() {
+    basketTotalRef = document.getElementById("basket_buy");
+    basketTotalRef.innerHTML = renderBasketTotalTemplate();
+}
+
+function moveBurgerToBasket(i) {
     const burgerMeal = basket.find((item) => item.name === dishes.burger[i].name);
     if (burgerMeal) {
         burgerMeal.amount++;
@@ -58,6 +64,36 @@ function moveToBasket(i) {
             "name": dishes.burger[i].name,
             "price": dishes.burger[i].price,
             "amount": dishes.burger[i].amount,
+        });
+    }
+
+    renderBasketContent(i);
+}
+
+function movePizzaToBasket(i) {
+    const pizzaMeal = basket.find((item) => item.name === dishes.pizza[i].name);
+    if (pizzaMeal) {
+        pizzaMeal.amount++;
+    } else {
+        basket.push({
+            "name": dishes.pizza[i].name,
+            "price": dishes.pizza[i].price,
+            "amount": dishes.pizza[i].amount,
+        });
+    }
+
+    renderBasketContent(i);
+}
+
+function moveSaladToBasket(i) {
+    const saladMeal = basket.find((item) => item.name === dishes.salad[i].name);
+    if (saladMeal) {
+        saladMeal.amount++;
+    } else {
+        basket.push({
+            "name": dishes.salad[i].name,
+            "price": dishes.salad[i].price,
+            "amount": dishes.salad[i].amount,
         });
     }
 
