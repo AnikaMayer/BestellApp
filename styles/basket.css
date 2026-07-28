@@ -1,13 +1,6 @@
-.basket_outer_box {
-    height: 0;
-    width: 0;
+/* .basket_outer_box {
     overflow: visible;
-    position: sticky;
-    top: 0;
-    right: 0;
-    left: 100%;
-    bottom: 100%;
-}
+} */
 
 .basket {
     height: 794px;
@@ -18,7 +11,12 @@
     padding-right: 60px;
     border-top-left-radius: 30px;
     border-bottom-left-radius: 30px;
-    transform: translateX(-100%);
+    /* transform: translateX(-100%); */
+    position: sticky;
+    top: 0;
+    right: 0;
+    left: 100%;
+    bottom: 100%;
     z-index: 1;
 }
 
