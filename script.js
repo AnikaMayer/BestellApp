@@ -74,22 +74,50 @@ function basketPriceCalc(i) {
 
 function renderBasketCheckout() {
     const basketCheckoutRef = document.getElementById("basket_checkout");
-    basketCheckoutRef.innerHTML = renderBasketTotalTemplate();
+    basketCheckoutRef.innerHTML = renderBasketCheckoutTemplate();
 }
 
-function renderBasketTotal() {
+function renderBasketSubTotal() {
     const basketSubtotalRef = document.getElementById("basket_subtotal");
-    const basketTotalRef = document.getElementById("basket_total");
-    const basketDeliveryRef = document.getElementById("basket_delivery");
     let subtotal = 0;
-    let total = 0;
-    const delivery = 4.99;
     for (let k = 0; k < basket.length; k++) {
         subtotal += basket[k].price * basket[k].amount;
     }
-    basketSubtotalRef.innerText = subtotal;
-    basketTotalRef.innerText = subtotal + delivery;
-    basketDeliveryRef.innerText = delivery;
+    basketSubtotalRef.innerText = numberToCurrency(subtotal);
+    renderBasketTotal(subtotal);
+}
+
+function renderBasketTotal(subtotal) {
+    const basketDeliveryRef = document.getElementById("basket_delivery");
+    const basketTotalRef = document.getElementById("basket_total");
+    const delivery = 4.99;
+    let total = 0;
+    total = subtotal + delivery;
+    basketTotalRef.innerText = numberToCurrency(total);
+    basketDeliveryRef.innerText = numberToCurrency(delivery);
+    checkoutButton(total);
+}
+
+function checkoutButton(total) {
+    const checkoutButtonRef = document.getElementById("checkout_btn");
+    checkoutButtonRef.innerText = numberToCurrency(total);
+}
+
+function placeOrder() {
+    const confirmOrderRef = document.getElementById("order_confirmation");
+    confirmOrderRef.showModal();
+    confirmOrderRef.innerHTML = orderConfirmTemplate();
+    confirmOrderRef.classList.add("opened");
+}
+
+function closeDialog() {
+    const confirmOrderRef = document.getElementById("order_confirmation");
+    confirmOrderRef.close();
+    confirmOrderRef.classList.remove("opened");
+}
+
+function bubblingProtection() {
+    event.stopPropagation();
 }
 
 //#endregion
@@ -153,7 +181,7 @@ function addToCart(category, i) {
         });
         renderBasketContent();
     }
-    renderBasketTotal();
+    renderBasketSubTotal();
 }
 
 function addMoreItems(category, i) {
@@ -169,12 +197,13 @@ function renderPriceAndAmount(index) {
     const itemAmountRef = document.getElementById(`item_amount${index}`);
     itemPriceRef.innerText = basket[index].price * basket[index].amount;
     itemAmountRef.innerText = basket[index].amount;
+    basketPriceCalc(index);
 }
 
 function increaseAmount(j) {
     basket[j].amount++;
     renderPriceAndAmount(j);
-    renderBasketTotal();
+    renderBasketSubTotal();
 }
 
 function decreaseAmount(j) {
@@ -183,7 +212,7 @@ function decreaseAmount(j) {
     } else {
         basket[j].amount--;
         renderPriceAndAmount(j);
-        renderBasketTotal();
+        renderBasketSubTotal();
     }
 }
 
@@ -193,7 +222,7 @@ function removeItem(j) {
     if (basket.length === 0) {
         return;
     } else {
-        renderBasketTotal();
+        renderBasketSubTotal();
     }
 }
 
@@ -204,5 +233,4 @@ function numberToCurrency(price) {
         style: "currency",
         currency: "EUR",
     });
-    priceRef.innerHTML = priceFormat;
 }

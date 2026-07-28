@@ -115,7 +115,7 @@ function renderBasketContentTemplate(j) {
         `;
 }
 
-function renderBasketTotalTemplate() {
+function renderBasketCheckoutTemplate() {
     return /*html*/ `
             <div class="subtotal">
                 <p>Subtotal</p>
@@ -129,6 +129,19 @@ function renderBasketTotalTemplate() {
                 <p>Total</p>
                 <p id="basket_total"></p>
             </div>
-            <button onclick="">Buy now ()</button>
+            <button onclick="placeOrder()">Buy now (<span id="checkout_btn"></span>)</button>
         `;
+}
+
+function orderConfirmTemplate() {
+    return /*html*/ `
+        <div onclick="bubblingProtection()">
+            <button onclick="closeDialog()">
+                <img src="./assets/icons/close_icon.svg" alt="Close Button">
+            </button>
+            <img src="./assets/icons/order_confirmed_truck.svg" alt="Delivery Truck">
+            <h5>Order confirmed!</h5>
+            <p>Your food is on the way!</p>
+        </div>
+    `;
 }
