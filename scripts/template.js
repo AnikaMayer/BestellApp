@@ -1,61 +1,81 @@
-function renderBurgerTemplate(i) {
-    return /*html*/ `
-            <article>
-                <div class="dish_image">
-                    <img src="./${dishes.burger[i].path}" alt="Image of ${dishes.burger[i].name}">
-                </div>
-                <div class="dish_info">
-                    <div class="dish_title">
-                        <h3>${dishes.burger[i].name}</h3>
-                        <p>${dishes.burger[i].description}</p>
-                    </div>
-                    <div class="dish_price_add">
-                        <p id="price_currency${i}">${numberToCurrency(dishes.burger[i].price)}</p>
-                        <button class="add_button" onclick="moveBurgerToBasket(${i})">Add to basket</button>
-                    </div>
-                </div>
-            </article>
-        `;
-}
+// function renderBurgerTemplate(i) {
+//     return /*html*/ `
+//             <article>
+//                 <div class="dish_image">
+//                     <img src="./${dishes.burger[i].path}" alt="Image of ${dishes.burger[i].name}">
+//                 </div>
+//                 <div class="dish_info">
+//                     <div class="dish_title">
+//                         <h3>${dishes.burger[i].name}</h3>
+//                         <p>${dishes.burger[i].description}</p>
+//                     </div>
+//                     <div class="dish_price_add">
+//                         <p id="price_currency${i}">${numberToCurrency(dishes.burger[i].price)}</p>
+//                         <button class="add_button" onclick="moveBurgerToBasket(${i})">Add to basket</button>
+//                     </div>
+//                 </div>
+//             </article>
+//         `;
+// }
 
-function renderPizzaTemplate(i) {
-    return /*html*/ `
-            <article>
-                <div class="dish_image">
-                    <img src="./${dishes.pizza[i].path}" alt="Image of ${dishes.pizza[i].name}">
-                </div>
-                <div class="dish_info">
-                    <div class="dish_title">
-                        <h3>${dishes.pizza[i].name}</h3>
-                        <p>${dishes.pizza[i].description}</p>
-                    </div>
-                    <div class="dish_price_add">
-                        <p id="price_currency${i}">${numberToCurrency(dishes.pizza[i].price)}</p>
-                        <button class="add_button" onclick="movePizzaToBasket(${i})">Add to basket</button>
-                    </div>
-                </div>
-            </article>
-        `;
-}
+// function renderPizzaTemplate(i) {
+//     return /*html*/ `
+//             <article>
+//                 <div class="dish_image">
+//                     <img src="./${dishes.pizza[i].path}" alt="Image of ${dishes.pizza[i].name}">
+//                 </div>
+//                 <div class="dish_info">
+//                     <div class="dish_title">
+//                         <h3>${dishes.pizza[i].name}</h3>
+//                         <p>${dishes.pizza[i].description}</p>
+//                     </div>
+//                     <div class="dish_price_add">
+//                         <p id="price_currency${i}">${numberToCurrency(dishes.pizza[i].price)}</p>
+//                         <button class="add_button" onclick="movePizzaToBasket(${i})">Add to basket</button>
+//                     </div>
+//                 </div>
+//             </article>
+//         `;
+// }
 
-function renderSaladTemplate(i) {
+// function renderSaladTemplate(i) {
+//     return /*html*/ `
+//             <article>
+//                 <div class="dish_image">
+//                     <img src="./${dishes.salad[i].path}" alt="Image of ${dishes.salad[i].name}">
+//                 </div>
+//                 <div class="dish_info">
+//                     <div class="dish_title">
+//                         <h3>${dishes.salad[i].name}</h3>
+//                         <p>${dishes.salad[i].description}</p>
+//                     </div>
+//                     <div class="dish_price_add">
+//                         <p id="price_currency${i}">${numberToCurrency(dishes.salad[i].price)}</p>
+//                         <button class="add_button" onclick="moveSaladToBasket(${i})">Add to basket</button>
+//                     </div>
+//                 </div>
+//             </article>
+//         `;
+// }
+
+function renderDishesTemplate(category, i) {
     return /*html*/ `
-            <article>
-                <div class="dish_image">
-                    <img src="./${dishes.salad[i].path}" alt="Image of ${dishes.salad[i].name}">
+        <article>
+            <div class="dish_image">
+                <img src="./${dishes[category][i].path}" alt="Image of ${dishes[category][i].name}">
+            </div>
+            <div class="dish_info">
+                <div class="dish_title">
+                    <h3>${dishes[category][i].name}</h3>
+                    <p>${dishes[category][i].description}</p>
                 </div>
-                <div class="dish_info">
-                    <div class="dish_title">
-                        <h3>${dishes.salad[i].name}</h3>
-                        <p>${dishes.salad[i].description}</p>
-                    </div>
-                    <div class="dish_price_add">
-                        <p id="price_currency${i}">${numberToCurrency(dishes.salad[i].price)}</p>
-                        <button class="add_button" onclick="moveSaladToBasket(${i})">Add to basket</button>
-                    </div>
+                <div class="dish_price_add">
+                    <p id="price_currency${i}">${numberToCurrency(dishes[category][i].price)}</p>
+                    <button class="add_button" onclick="addToCart('${category}', ${i})">Add to basket</button>
                 </div>
-            </article>
-        `;
+            </div>
+        </article>
+    `;
 }
 
 function renderEmptyBasketTemplate() {
@@ -82,12 +102,12 @@ function renderBasketContentTemplate(j) {
                 </div>
                 <div class="menu_info">
                     <div>
-                        <button onclick="">
+                        <button onclick="removeItem(${j})">
                             <img src="./assets/icons/trash_icon.svg" alt="Remove Icon">
                         </button>
-                        <button onclick="">-</button>
-                        <p>${basket[j].amount}</p>
-                        <button onclick="">+</button>
+                        <button onclick="decreaseAmount(${j})">-</button>
+                        <p id="item_amount${j}">${basket[j].amount}</p>
+                        <button onclick="increaseAmount(${j})">+</button>
                     </div>
                     <p id="item_price${j}"></p>
                 </div>
@@ -99,36 +119,16 @@ function renderBasketTotalTemplate() {
     return /*html*/ `
             <div class="subtotal">
                 <p>Subtotal</p>
-                <p></p>
+                <p id="basket_subtotal"></p>
             </div>
             <div class="delivery">
                 <p>Delivery fee</p>
-                <p></p>
+                <p id="basket_delivery"></p>
             </div>
             <div class="total">
                 <p>Total</p>
-                <p></p>
+                <p id="basket_total"></p>
             </div>
             <button onclick="">Buy now ()</button>
         `;
-}
-
-function renderDishesTemplate(category, i) {
-    return /*html*/ `
-        <article>
-                <div class="dish_image">
-                    <img src="./${dishes[category][i].path}" alt="Image of ${dishes[category][i].name}">
-                </div>
-                <div class="dish_info">
-                    <div class="dish_title">
-                        <h3>${dishes[category][i].name}</h3>
-                        <p>${dishes[category][i].description}</p>
-                    </div>
-                    <div class="dish_price_add">
-                        <p id="price_currency${i}">${numberToCurrency(dishes[category][i].price)}</p>
-                        <button class="add_button" onclick="moveSaladToBasket(${i})">Add to basket</button>
-                    </div>
-                </div>
-            </article>
-    `;
 }
