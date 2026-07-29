@@ -1,7 +1,58 @@
 .dialog_wrapper {
-    background-color: teal;
-    height: 269px;
+    background-color: var(--background-color-dark);
+    height: 270px;
     width: 415px;
     align-self: center;
     justify-self: center;
+    position: fixed;
+    border: none;
+    border-radius: 30px;
+}
+
+.dialog_content {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 26px;
+    padding: 30px 40px;
+}
+
+.dialog_confirm {
+    height: 163px;
+    width: 335px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    img {
+        height: auto;
+        width: 80px;
+        margin-bottom: 16px;
+    }
+
+    h5 {
+        font-family: "Palanquin";
+        font-size: 2.6rem;
+        font-weight: 700;
+        color: var(--font-color-basket);
+        line-height: 120%;
+    }
+
+    p {
+        font-family: "Palanquin";
+        font-size: 1.8rem;
+        font-weight: 700;
+        color: var(--font-color-basket);
+        line-height: 120%;
+    }
+}
+
+dialog::backdrop {
+    opacity: 0;
+    background-color: black;
+}
+
+dialog.opened::backdrop {
+    opacity: 0.3;
 }

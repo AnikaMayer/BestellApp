@@ -11,3 +11,6 @@
         padding: 30px max(0px, calc(50% - 720px)) 0px;
     }
 }
+
+@media screen and (max-width: 768px) {
+}

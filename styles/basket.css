@@ -106,13 +106,15 @@
             .menu_amount {
                 height: 29px;
                 display: flex;
-                gap: 4px;
+                /* gap: 4px; */
                 align-items: flex-end;
 
                 p {
                     font-size: 24px;
                     font-weight: 600;
                     line-height: 120%;
+                    width: 24px;
+                    text-align: center;
                 }
             }
         }
@@ -168,4 +170,8 @@
             color: var(--font-color-light);
         }
     }
+}
+
+article.none {
+    display: none;
 }

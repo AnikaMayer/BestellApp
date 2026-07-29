@@ -45,9 +45,9 @@ function renderBasketContentTemplate(j) {
                     <button class="trash_btn" onclick="removeItem(${j})">
                         <img src="./assets/icons/trash_icon.svg" alt="Remove Icon">
                     </button>
-                    <button onclick="decreaseAmount(${j})">-</button>
+                    <button class="amount_btn" onclick="decreaseAmount(${j})">-</button>
                     <p id="item_amount${j}">${basket[j].amount}</p>
-                    <button onclick="increaseAmount(${j})">+</button>
+                    <button class="amount_btn" onclick="increaseAmount(${j})">+</button>
                 </div>
                 <p id="item_price${j}"></p>
             </div>
@@ -79,13 +79,17 @@ function renderBasketCheckoutTemplate() {
 
 function orderConfirmTemplate() {
     return /*html*/ `
-        <div onclick="bubblingProtection()">
-            <button onclick="closeDialog()">
-                <img src="./assets/icons/close_icon.svg" alt="Close Button">
-            </button>
-            <img src="./assets/icons/order_confirmed_truck.svg" alt="Delivery Truck">
-            <h5>Order confirmed!</h5>
-            <p>Your food is on the way!</p>
+        <div class="dialog_content" onclick="bubblingProtection()">
+            <div class="dialog_btn">
+                <button onclick="closeDialog()">
+                    <img src="./assets/icons/close_icon.svg" alt="Close Button">
+                </button>
+            </div>
+            <div class="dialog_confirm">
+                <img src="./assets/icons/order_confirmed_truck.svg" alt="Delivery Truck">
+                <h5>Order confirmed!</h5>
+                <p>Your food is on the way!</p>
+            </div>
         </div>
     `;
 }
