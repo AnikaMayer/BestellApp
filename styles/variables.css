@@ -13,7 +13,7 @@
     --background-color-hover: rgba(255, 255, 255, 1);
     --background-color-scroll: rgba(231, 195, 173, 1);
 
-    --height-header-footer: clamp(80px, calc(65.714px + 4.464vw), 130px);
+    --height-header: clamp(79px, calc(65px + 4.375vw), 128px);
     --height-food-icon: clamp(60px, calc(51.429px + 2.679vw), 90px);
     --height-main-logo: clamp(120px, calc(97.143px + 7.143vw), 200px);
     --content-padding-left: clamp(20px, calc(-8.571px + 8.929vw), 120px);
