@@ -18,3 +18,58 @@
     box-shadow: rgba(0, 0, 0, 0.2) 1px 2px 2px 0px;
     color: var(--font-color-highlight);
 }
+
+.menu_amount {
+    button {
+        height: 29px;
+        width: fit-content;
+        background: none;
+        border: none;
+        font-family: "Palanquin";
+        font-size: 1.5rem;
+        font-weight: 600;
+        color: var(--font-color);
+        line-height: 120%;
+    }
+}
+
+.trash_btn {
+    height: 29px;
+    width: 24px;
+    background: none;
+    border: none;
+    display: flex;
+    align-items: flex-end;
+
+    img {
+        height: 24px;
+        width: auto;
+    }
+}
+
+.order_btn {
+    height: 64px;
+    width: 320px;
+    border: none;
+    border-radius: 60px;
+    background-color: var(--background-color-theme);
+    padding: 13px;
+    font-family: "Palanquin";
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--font-color-Buy-now);
+    line-height: 120%;
+}
+
+.basket_items::-webkit-scrollbar {
+    width: 6px;
+}
+
+.basket_items::-webkit-scrollbar-track {
+    background-color: none;
+}
+
+.basket_items::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color: var(--background-color-scroll);
+}

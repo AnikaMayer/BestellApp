@@ -38,11 +38,11 @@ function renderBasketContentTemplate(j) {
     return /*html*/ `
         <div class="item_card">
             <div class="menu_title">
-                <p>${basket[j].name}</p>
+                <p><span id="title_amount${j}">${basket[j].amount}</span> x ${basket[j].name}</p>
             </div>
             <div class="menu_info">
-                <div>
-                    <button onclick="removeItem(${j})">
+                <div class="menu_amount">
+                    <button class="trash_btn" onclick="removeItem(${j})">
                         <img src="./assets/icons/trash_icon.svg" alt="Remove Icon">
                     </button>
                     <button onclick="decreaseAmount(${j})">-</button>
@@ -57,19 +57,23 @@ function renderBasketContentTemplate(j) {
 
 function renderBasketCheckoutTemplate() {
     return /*html*/ `
-        <div class="subtotal">
-            <p>Subtotal</p>
-            <p id="basket_subtotal"></p>
+        <div class="subtotal_box">
+            <div class="subtotal">
+                <p>Subtotal</p>
+                <p id="basket_subtotal"></p>
+            </div>
+            <div class="delivery">
+                <p>Delivery fee</p>
+                <p id="basket_delivery"></p>
+            </div>
         </div>
-        <div class="delivery">
-            <p>Delivery fee</p>
-            <p id="basket_delivery"></p>
+        <div class="total_box">
+            <div class="total">
+                <p>Total</p>
+                <p id="basket_total"></p>
+            </div>
+            <button class="order_btn" onclick="placeOrder()">Buy now (<span id="checkout_btn"></span>)</button>
         </div>
-        <div class="total">
-            <p>Total</p>
-            <p id="basket_total"></p>
-        </div>
-        <button onclick="placeOrder()">Buy now (<span id="checkout_btn"></span>)</button>
     `;
 }
 

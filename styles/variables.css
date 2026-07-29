@@ -4,12 +4,14 @@
     --font-color-medium: rgba(114, 109, 109, 1);
     --font-color-highlight: rgba(231, 108, 31, 1);
     --font-color-basket: rgba(253, 234, 220, 1);
+    --font-color-Buy-now: rgba(251, 251, 251, 1);
 
     --background-color-theme: rgba(231, 108, 31, 1);
     --background-color-light: rgba(253, 234, 220, 1);
     --background-color-dark: rgba(54, 53, 52, 1);
     --background-color-rating: rgba(250, 202, 172, 1);
     --background-color-hover: rgba(255, 255, 255, 1);
+    --background-color-scroll: rgba(231, 195, 173, 1);
 
     --height-header-footer: clamp(80px, calc(65.714px + 4.464vw), 130px);
     --height-food-icon: clamp(60px, calc(51.429px + 2.679vw), 90px);

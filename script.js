@@ -142,8 +142,10 @@ function addMoreItems(category, i) {
 function renderPriceAndAmount(index) {
     const itemPriceRef = document.getElementById(`item_price${index}`);
     const itemAmountRef = document.getElementById(`item_amount${index}`);
+    const titleAmountRef = document.getElementById(`title_amount${index}`);
     itemPriceRef.innerText = basket[index].price * basket[index].amount;
     itemAmountRef.innerText = basket[index].amount;
+    titleAmountRef.innerText = basket[index].amount;
     basketPriceCalc(index);
 }
 
