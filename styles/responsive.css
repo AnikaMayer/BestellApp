@@ -3,7 +3,11 @@
         padding: 0px max(40px, calc(50% - 720px)) 0px max(120px, calc(50% - 720px));
     }
 
-    main {
+    .content_hero {
         padding: 0px max(0px, calc(50% - 720px));
+    }
+
+    .content {
+        padding: 30px max(0px, calc(50% - 720px)) 0px;
     }
 }

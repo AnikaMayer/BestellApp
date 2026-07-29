@@ -134,28 +134,37 @@ main {
 .content_wrapper {
     height: fit-content;
     width: 100%;
-    max-width: 1440px;
-    background-color: rgba(172, 255, 47, 0.425);
     display: flex;
     flex-direction: row;
+    padding-top: 30px;
 }
 
 .menu_wrapper {
     height: fit-content;
-    width: 100%;
+    width: 1440px;
+    max-width: 1440px;
+    position: static;
+}
+
+.category_background {
+    height: 60px;
+    width: 100vw;
+    background-color: var(--background-color-theme);
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 .menu_section {
     height: auto;
-    width: 100%;
-    padding-bottom: 40px;
+    width: fit-content;
+    padding-bottom: 60px;
 }
 
-.header_section {
-    background-color: var(--background-color-theme);
+.category_header {
     height: 60px;
     width: 100%;
-    margin-bottom: 27px;
+    margin-bottom: 30px;
     display: flex;
     align-items: flex-end;
     gap: 28px;
