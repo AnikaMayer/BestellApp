@@ -97,9 +97,11 @@ function checkoutButton(total) {
 
 function placeOrder() {
     const confirmOrderRef = document.getElementById("order_confirmation");
+    const basketDisplayRef = document.getElementById("basket_display");
     confirmOrderRef.showModal();
     confirmOrderRef.innerHTML = orderConfirmTemplate();
     confirmOrderRef.classList.add("opened");
+    basketDisplayRef.classList.add("none");
 }
 
 function closeDialog() {
