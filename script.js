@@ -39,11 +39,16 @@ function renderBasketContent() {
         basketContentRef.innerHTML = renderEmptyBasketTemplate();
     } else {
         for (let j = 0; j < basket.length; j++) {
-            basketContentRef.innerHTML += renderBasketContentTemplate(j);
-            basketPriceCalc(j);
+            basketContentHelper(j);
         }
         renderBasketCheckout();
     }
+}
+
+function basketContentHelper(j) {
+    const basketContentRef = document.getElementById("basket_content");
+    basketContentRef.innerHTML += renderBasketContentTemplate(j);
+    basketPriceCalc(j);
 }
 
 function basketPriceCalc(j) {
@@ -73,11 +78,15 @@ function toggleBasket() {
 
 function basketButtonDesign() {
     const basketButtonRef = document.getElementById("amount_circle");
+    const svgRef = document.getElementById("with_quantity");
+    basketButtonRef.innerHTML = "";
     if (basket.length > 0) {
         basketButtonRef.classList.add("items_amount");
         basketButtonRef.innerHTML = basketButtonDesignTemplate();
+        svgRef.classList.add("quantity_cart");
     } else {
         basketButtonRef.classList.remove("items_amount");
+        svgRef.classList.remove("quantity_cart");
     }
 }
 
@@ -124,12 +133,25 @@ function placeOrder() {
     confirmOrderRef.innerHTML = orderConfirmTemplate();
     confirmOrderRef.classList.add("opened");
     basketDisplayRef.classList.add("none");
+    basket.length = 0;
+    document.body.classList.toggle("overscroll_stop");
+    basketReset();
+}
+
+function basketReset() {
+    renderBasketContent();
+    basketButtonDesign();
+    setTimeout("closeDialog()", 3000);
+    toggleBasket();
 }
 
 function closeDialog() {
     const confirmOrderRef = document.getElementById("order_confirmation");
+    const basketDisplayRef = document.getElementById("basket_display");
     confirmOrderRef.close();
     confirmOrderRef.classList.remove("opened");
+    basketDisplayRef.classList.remove("none");
+    document.body.classList.toggle("overscroll_stop");
 }
 
 function bubblingProtection() {
@@ -153,6 +175,7 @@ function addToCart(category, i) {
         renderBasketContent();
     }
     renderBasketSubTotal();
+    changeTrashButton(dishes[category][i].name);
 }
 
 function addMoreItems(category, i) {
@@ -177,6 +200,7 @@ function increaseAmount(j) {
     basket[j].amount++;
     renderPriceAndAmount(j);
     renderBasketSubTotal();
+    changeTrashButton(basket[j].name);
 }
 
 function decreaseAmount(j) {
@@ -186,6 +210,7 @@ function decreaseAmount(j) {
         basket[j].amount--;
         renderPriceAndAmount(j);
         renderBasketSubTotal();
+        changeTrashButton(basket[j].name);
     }
 }
 
@@ -193,9 +218,26 @@ function removeItem(j) {
     basket.splice(j, 1);
     renderBasketContent();
     if (basket.length === 0) {
-        return;
+        return basketButtonDesign();
     } else {
         renderBasketSubTotal();
+    }
+}
+
+function changeTrashButton(name) {
+    const j = basket.findIndex((item) => item.name === name);
+    if (j === -1) return;
+    const btnUpRef = document.getElementById(`quantity_up${j}`);
+    const btnDownRef = document.getElementById(`quantity_down${j}`);
+    const btnMinusRef = document.getElementById(`btn_minus${j}`);
+    if (basket[j].amount > 1) {
+        btnDownRef.classList.add("d_none");
+        btnMinusRef.classList.remove("d_none");
+        btnUpRef.classList.remove("d_none");
+    } else {
+        btnDownRef.classList.remove("d_none");
+        btnMinusRef.classList.add("d_none");
+        btnUpRef.classList.add("d_none");
     }
 }
 

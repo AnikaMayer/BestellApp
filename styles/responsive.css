@@ -64,7 +64,6 @@
                 height: 346px;
                 /* width: clamp(288px, calc(-32px + 100vw), 343px); */
                 border-radius: 16px;
-                object-fit: left;
 
                 .burger_logo {
                     transform: translateY(50%);
@@ -139,16 +138,16 @@
             height: fit-content;
             /* width: clamp(280px, calc(-40px + 100vw), 335px); */
             width: clamp(280px, calc(-40px + 100vw), 728px);
-            flex-direction: column;
+            /* flex-direction: column; */
             gap: 8px;
 
             .dish_image {
-                height: 86px;
-                width: 100%;
+                /* height: 100%;
+                width: 207px; */
 
                 img {
-                    height: 86px;
-                    width: 100%;
+                    /* height: 100%;
+                    width: 207px; */
                 }
             }
 
@@ -209,7 +208,7 @@
                     overscroll-behavior: contain;
 
                     .item_card {
-                        width: 100%;
+                        width: 98%;
 
                         .menu_title {
                             width: 100%;
@@ -250,12 +249,92 @@
             }
         }
     }
+
+    .dialog_wrapper {
+        height: 255px;
+        width: 300px;
+
+        .dialog_content {
+            height: 255px;
+            /* width: 300px; */
+            gap: 16px;
+            padding-inline: 15px;
+            padding-bottom: 40px;
+            padding-top: 30px;
+            justify-content: space-between;
+
+            dialog_btn {
+                padding-right: 20px;
+            }
+
+            .dialog_confirm {
+                height: 141px;
+                width: 270px;
+
+                h5 {
+                    font-size: 2rem;
+                }
+
+                p {
+                    font-size: 1.35rem;
+                }
+            }
+        }
+    }
+
+    .display_basket {
+        display: none;
+    }
+
+    .overscroll_stop {
+        overflow: hidden;
+    }
 }
 
-.display_basket {
-    display: none;
-}
+@media screen and (max-width: 587px) {
+    .dishes {
+        /* width: clamp(300px, calc(-18.182px + 99.432vw), 1000px); */
+        padding-inline: 20px;
+        align-items: center;
 
-.overscroll_stop {
-    overflow: hidden;
+        article {
+            height: fit-content;
+            /* width: clamp(280px, calc(-40px + 100vw), 335px); */
+            width: clamp(280px, calc(-40px + 100vw), 728px);
+            flex-direction: column;
+            gap: 8px;
+
+            .dish_image {
+                height: clamp(86px, calc(33.266px + 16.479vw), 130px);
+                width: 100%;
+
+                img {
+                    height: clamp(86px, calc(33.266px + 16.479vw), 130px);
+                    width: 100%;
+                }
+            }
+
+            .dish_info {
+                height: fit-content;
+                width: 100%;
+                flex-direction: column;
+                justify-content: flex-end;
+
+                .dish_title {
+                    width: clamp(260px, calc(-54.182px + 98.182vw), 314px);
+
+                    p {
+                        width: 100%;
+                    }
+                }
+
+                .dish_price_add {
+                    width: 100%;
+                    flex-direction: row;
+                    justify-content: space-between;
+                    align-items: center;
+                }
+            }
+        }
+    }
 }

@@ -56,16 +56,20 @@
     border: none;
     border-radius: 5px;
     display: flex;
-    align-items: flex-end;
+    align-items: center;
+    justify-content: center;
 
-    img {
-        height: 24px;
-        width: 24px;
+    svg {
+        fill: #363534;
     }
 }
 
 .trash_btn:hover {
     background-color: var(--background-color-hover);
+
+    svg {
+        fill: var(--background-color-theme);
+    }
 }
 
 .order_btn {
@@ -84,7 +88,7 @@
 
 .dialog_btn {
     height: fit-content;
-    width: 335px;
+    width: 100%;
     display: flex;
     justify-content: flex-end;
 
@@ -123,15 +127,21 @@ nav {
         background: none;
         border: none;
         border-radius: 5px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        svg {
+            fill: white;
+        }
     }
 
     button:active {
         background-color: var(--background-color-hover);
-    }
 
-    img {
-        height: 30px;
-        width: 30px;
+        svg {
+            fill: var(--background-color-theme);
+        }
     }
 
     .items_amount {
@@ -154,4 +164,8 @@ nav {
             color: var(--font-color-highlight);
         }
     }
+}
+
+.quantity_cart {
+    fill: var(--background-color-theme);
 }

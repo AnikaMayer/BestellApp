@@ -1,6 +1,7 @@
 .basket_outer_box {
-    height: 0;
-    width: 0;
+    /* height: 100%; */
+    width: 435px;
+    flex-shrink: 0;
 }
 
 .basket {
@@ -35,6 +36,10 @@
             height: 24px;
             width: 24px;
         }
+    }
+
+    button:active {
+        background-color: var(--background-color-hover);
     }
 }
 
@@ -115,11 +120,14 @@
             font-size: 22px;
             font-weight: 700;
             line-height: 120%;
+            width: 258px;
         }
 
         .menu_title {
             height: fit-content;
-            width: 258px;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
         }
 
         .menu_info {
@@ -198,10 +206,18 @@
     }
 }
 
-/* article.none {
+article.none {
     display: none;
-} */
+}
 
 .backdrop_basket {
+    display: none;
+}
+
+.d_none {
+    display: none;
+}
+
+.menu_amount .d_none {
     display: none;
 }
