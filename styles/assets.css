@@ -103,9 +103,9 @@
 
 nav {
     height: 78px;
-    width: 320px;
+    width: clamp(320px, calc(0px + 100vw), 768px);
     background-color: var(--background-color-dark);
-    padding: 24px 25px;
+    padding: 24px clamp(25px, calc(-28.571px + 16.741vw), 100px);
     position: fixed;
     bottom: 0;
 
@@ -114,6 +114,18 @@ nav {
         list-style-type: none;
         display: flex;
         justify-content: space-between;
+    }
+
+    button {
+        height: 30px;
+        width: 30px;
+        background: none;
+        border: none;
+        border-radius: 5px;
+    }
+
+    button:active {
+        background-color: var(--background-color-hover);
     }
 
     img {

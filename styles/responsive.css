@@ -16,6 +16,12 @@
     }
 }
 
+@media screen and (min-width: 1025px) {
+    nav {
+        display: none;
+    }
+}
+
 @media screen and (max-width: 768px) {
     .logo_menu {
         display: none;
@@ -25,15 +31,16 @@
         margin-bottom: 78px;
 
         .footer_content {
+            padding-inline: 16px;
             flex-direction: column-reverse;
             gap: 8px;
-        }
-    }
 
-    .imprint {
-        display: flex;
-        flex-direction: column;
-        gap: 8px;
+            .imprint {
+                display: flex;
+                flex-direction: column;
+                gap: 8px;
+            }
+        }
     }
 
     .hero_section {
@@ -44,12 +51,12 @@
 
         .hero_background {
             height: 346px;
-            width: clamp(288px, calc(-32px + 100vw), 343px);
+            /* width: clamp(288px, calc(-32px + 100vw), 343px); */
             transform: none;
 
             .background_image {
                 height: 346px;
-                width: clamp(288px, calc(-32px + 100vw), 343px);
+                /* width: clamp(288px, calc(-32px + 100vw), 343px); */
                 border-radius: 16px;
                 object-fit: left;
 
@@ -72,8 +79,19 @@
         }
     }
 
+    .content_wrapper {
+        max-width: 768px;
+    }
+
+    .menu_wrapper {
+        width: 100%;
+    }
+
     .menu_section {
         padding-bottom: 76px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 
     .category_header {
@@ -81,7 +99,7 @@
         align-items: center;
         justify-content: center;
         gap: 0;
-        padding: 0;
+        padding-inline: 0;
 
         .category_icon_small {
             height: 60px;
@@ -106,11 +124,14 @@
     }
 
     .dishes {
+        /* width: clamp(300px, calc(-18.182px + 99.432vw), 1000px); */
         padding-inline: 20px;
+        align-items: center;
 
         article {
             height: fit-content;
-            width: clamp(280px, calc(-40px + 100vw), 335px);
+            /* width: clamp(280px, calc(-40px + 100vw), 335px); */
+            width: clamp(280px, calc(-40px + 100vw), 728px);
             flex-direction: column;
             gap: 8px;
 

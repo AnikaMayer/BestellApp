@@ -5,10 +5,12 @@ body {
     font-family: "Palanquin";
     color: var(--font-color);
     line-height: 120%;
+    overflow-x: hidden;
 }
 
 main {
     flex: 1;
+    background-color: rgba(255, 0, 0, 0.418);
 }
 
 .header_main {
@@ -46,6 +48,7 @@ main {
         height: 508px;
         width: 100%;
         transform: translateY(-15%);
+        background-color: rgba(0, 0, 255, 0.575);
 
         .background_image {
             height: 100%;
@@ -78,6 +81,7 @@ main {
         align-items: center;
         text-align: center;
         gap: 22px;
+        background-color: green;
 
         .heading_box {
             height: 75px;
@@ -137,19 +141,20 @@ main {
     width: 100%;
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
     padding-top: 30px;
 }
 
 .menu_wrapper {
     height: fit-content;
-    width: 1440px;
-    max-width: 1440px;
+    width: 833px;
     position: static;
+    background-color: rgba(0, 0, 0, 0.404);
 }
 
 .category_background {
     height: 60px;
-    width: 100vw;
+    width: 100%;
     background-color: var(--background-color-theme);
     position: absolute;
     left: 50%;
@@ -160,6 +165,7 @@ main {
     height: auto;
     width: fit-content;
     padding-bottom: 60px;
+    background-color: rgba(153, 205, 50, 0.363);
 }
 
 .category_header {
@@ -201,7 +207,7 @@ main {
 
 .dishes {
     height: auto;
-    width: 100%;
+    width: fit-content;
     padding-left: 120px;
     display: flex;
     flex-direction: column;
@@ -240,17 +246,20 @@ main {
                 display: flex;
                 flex-direction: column;
                 gap: 8px;
+                background-color: pink;
 
                 h3 {
                     font-weight: 600;
                     font-size: 1.5rem;
                     line-height: 100%;
+                    background-color: aqua;
                 }
 
                 p {
                     font-weight: 500;
                     font-size: 1rem;
                     width: 339px;
+                    background-color: red;
                 }
             }
 
@@ -261,6 +270,7 @@ main {
                 flex-direction: column;
                 justify-content: space-between;
                 align-items: flex-end;
+                background-color: plum;
 
                 p {
                     font-weight: 600;
@@ -280,7 +290,8 @@ main {
     align-items: flex-end;
 
     .footer_content {
-        width: 530px;
+        width: 100%;
+        max-width: 530px;
         font-size: 1.125rem;
         color: var(--font-color-light);
         text-align: center;
