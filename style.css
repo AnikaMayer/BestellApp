@@ -10,7 +10,6 @@ body {
 
 main {
     flex: 1;
-    background-color: rgba(255, 0, 0, 0.418);
 }
 
 .header_main {
@@ -48,7 +47,6 @@ main {
         height: 508px;
         width: 100%;
         transform: translateY(-15%);
-        background-color: rgba(0, 0, 255, 0.575);
 
         .background_image {
             height: 100%;
@@ -81,7 +79,6 @@ main {
         align-items: center;
         text-align: center;
         gap: 22px;
-        background-color: green;
 
         .heading_box {
             height: 75px;
@@ -149,7 +146,6 @@ main {
     height: fit-content;
     width: 833px;
     position: static;
-    background-color: rgba(0, 0, 0, 0.404);
 }
 
 .category_background {
@@ -165,7 +161,6 @@ main {
     height: auto;
     width: fit-content;
     padding-bottom: 60px;
-    background-color: rgba(153, 205, 50, 0.363);
 }
 
 .category_header {
@@ -246,20 +241,17 @@ main {
                 display: flex;
                 flex-direction: column;
                 gap: 8px;
-                background-color: pink;
 
                 h3 {
                     font-weight: 600;
                     font-size: 1.5rem;
                     line-height: 100%;
-                    background-color: aqua;
                 }
 
                 p {
                     font-weight: 500;
                     font-size: 1rem;
                     width: 339px;
-                    background-color: red;
                 }
             }
 
@@ -270,7 +262,6 @@ main {
                 flex-direction: column;
                 justify-content: space-between;
                 align-items: flex-end;
-                background-color: plum;
 
                 p {
                     font-weight: 600;

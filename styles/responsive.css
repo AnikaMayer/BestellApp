@@ -16,9 +16,15 @@
     }
 }
 
-@media screen and (min-width: 1025px) {
+@media screen and (min-width: 769px) {
     nav {
         display: none;
+    }
+
+    .basket_close_btn {
+        display: none;
+        height: 0;
+        width: 0;
     }
 }
 
@@ -81,6 +87,7 @@
 
     .content_wrapper {
         max-width: 768px;
+        flex-direction: column;
     }
 
     .menu_wrapper {
@@ -169,7 +176,86 @@
         }
     }
 
-    .basket {
-        display: none;
+    .backdrop_basket {
     }
+
+    .basket {
+        height: 662px;
+        width: 90%;
+        position: fixed;
+        bottom: 77px;
+        top: unset;
+        right: unset;
+        left: 5%;
+        border-bottom-left-radius: 0;
+        border-top-right-radius: 30px;
+        padding-block: 25px;
+        padding-inline: 20px;
+        overscroll-behavior: none;
+        transform: translateY(5%);
+
+        .basket_wrapper {
+            height: 583px;
+            width: 100%;
+            align-items: center;
+            gap: 16px;
+
+            .basket_container {
+                width: 100%;
+                gap: 16px;
+
+                .basket_items {
+                    height: 333px;
+                    overscroll-behavior: contain;
+
+                    .item_card {
+                        width: 100%;
+
+                        .menu_title {
+                            width: 100%;
+                        }
+
+                        .menu_info {
+                            width: 100%;
+                        }
+                    }
+                }
+
+                .checkout {
+                    height: 203px;
+                    justify-content: unset;
+                    gap: 8px;
+
+                    .subtotal_box {
+                        height: 56px;
+                        width: 100%;
+                    }
+
+                    .total_box {
+                        height: 113px;
+                        width: 100%;
+
+                        .total {
+                            width: 100%;
+                        }
+
+                        .order_btn {
+                            height: 53px;
+                            width: 233px;
+                            padding: 12px;
+                            font-size: 1.5rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.display_basket {
+    display: none;
+}
+
+.overscroll_stop {
+    overflow: hidden;
 }

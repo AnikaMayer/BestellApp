@@ -108,6 +108,7 @@ nav {
     padding: 24px clamp(25px, calc(-28.571px + 16.741vw), 100px);
     position: fixed;
     bottom: 0;
+    z-index: 2;
 
     ul {
         width: 100%;
@@ -131,5 +132,26 @@ nav {
     img {
         height: 30px;
         width: 30px;
+    }
+
+    .items_amount {
+        height: 15px;
+        width: 15px;
+        background-color: var(--background-color-light);
+        border-radius: 50%;
+        position: absolute;
+        top: 0;
+        right: 0;
+        display: flex;
+        justify-content: center;
+
+        p {
+            font-family: "Palanquin";
+            font-size: 0.8rem;
+            font-weight: 600;
+            line-height: 1;
+            text-align: center;
+            color: var(--font-color-highlight);
+        }
     }
 }

@@ -11,7 +11,7 @@ function renderDishesTemplate(category, i) {
                 </div>
                 <div class="dish_price_add">
                     <p>${numberToCurrency(dishes[category][i].price)}</p>
-                    <button class="add_button" onclick="addToCart('${category}', '${i}')">Add to basket</button>
+                    <button class="add_button" onclick="addToCart('${category}', '${i}'); basketButtonDesign()">Add to basket</button>
                 </div>
             </div>
         </article>
@@ -91,5 +91,11 @@ function orderConfirmTemplate() {
                 <p>Your food is on the way!</p>
             </div>
         </div>
+    `;
+}
+
+function basketButtonDesignTemplate() {
+    return /*html*/ `
+        <p>${basket.length}</p>
     `;
 }

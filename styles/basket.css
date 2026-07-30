@@ -1,3 +1,8 @@
+.basket_outer_box {
+    height: 0;
+    width: 0;
+}
+
 .basket {
     height: 794px;
     width: 435px;
@@ -10,6 +15,27 @@
     position: sticky;
     top: 0;
     right: 0;
+    z-index: 1;
+}
+
+.basket_close_btn {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    padding-inline: 10px;
+
+    button {
+        height: 24px;
+        width: 24px;
+        background: none;
+        border: none;
+        border-radius: 5px;
+
+        img {
+            height: 24px;
+            width: 24px;
+        }
+    }
 }
 
 .basket_wrapper {
@@ -172,6 +198,10 @@
     }
 }
 
-article.none {
+/* article.none {
+    display: none;
+} */
+
+.backdrop_basket {
     display: none;
 }

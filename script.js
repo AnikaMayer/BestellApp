@@ -61,6 +61,28 @@ function renderBasketCheckout() {
     basketCheckoutRef.innerHTML = renderBasketCheckoutTemplate();
 }
 
+//#region basketMobile
+
+function toggleBasket() {
+    const toggleBasketRef = document.getElementById("basket_display");
+    const bodyOverscrollRef = document.body;
+    toggleBasketRef.classList.toggle("display_basket");
+    bodyOverscrollRef.classList.toggle("overscroll_stop");
+    basketButtonDesign();
+}
+
+function basketButtonDesign() {
+    const basketButtonRef = document.getElementById("amount_circle");
+    if (basket.length > 0) {
+        basketButtonRef.classList.add("items_amount");
+        basketButtonRef.innerHTML = basketButtonDesignTemplate();
+    } else {
+        basketButtonRef.classList.remove("items_amount");
+    }
+}
+
+//#endregion
+
 //#endregion
 
 //#region basketCheckout
