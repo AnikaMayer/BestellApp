@@ -100,3 +100,24 @@
         }
     }
 }
+
+nav {
+    height: 78px;
+    width: 320px;
+    background-color: var(--background-color-dark);
+    padding: 24px 25px;
+    position: fixed;
+    bottom: 0;
+
+    ul {
+        width: 100%;
+        list-style-type: none;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    img {
+        height: 30px;
+        width: 30px;
+    }
+}

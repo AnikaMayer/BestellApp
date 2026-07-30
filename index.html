@@ -25,7 +25,7 @@
         />
     </head>
     <body onload="init()">
-        <header class="header_main">
+        <header id="home" class="header_main">
             <img
                 class="logo_main"
                 src="./assets/icons/logo_bestellapp.svg"
@@ -69,9 +69,18 @@
                     <div class="category_background"></div>
                     <section class="menu_section">
                         <header class="category_header">
-                            <img src="./assets/icons/burger_icon.svg" alt="Burger Icon" />
+                            <img
+                                class="category_icon_small"
+                                src="./assets/icons/burger_icon.svg"
+                                alt="Burger Icon"
+                            />
+                            <img
+                                class="category_icon_big"
+                                src="./assets/icons/burger_icon.svg"
+                                alt="Burger Icon"
+                            />
                             <div class="headline_category">
-                                <h2>Burger & Sandwiches</h2>
+                                <h2>Burger<span class="sandwich"> & Sandwiches</span></h2>
                             </div>
                         </header>
                         <section id="dishes_burger" class="dishes"></section>
@@ -79,9 +88,18 @@
                     <div class="category_background"></div>
                     <section class="menu_section">
                         <header class="category_header">
-                            <img src="./assets/icons/pizza_icon.svg" alt="Pizza Icon" />
+                            <img
+                                class="category_icon_small"
+                                src="./assets/icons/pizza_icon.svg"
+                                alt="Pizza Icon"
+                            />
+                            <img
+                                class="category_icon_big"
+                                src="./assets/icons/pizza_icon.svg"
+                                alt="Pizza Icon"
+                            />
                             <div class="headline_category">
-                                <h2>Pizza <span>(30cm)</span></h2>
+                                <h2>Pizza <span class="pizza">(30cm)</span></h2>
                             </div>
                         </header>
                         <section id="dishes_pizza" class="dishes"></section>
@@ -89,7 +107,16 @@
                     <div class="category_background"></div>
                     <section class="menu_section">
                         <header class="category_header">
-                            <img src="./assets/icons/salad_icon.svg" alt="Salad Icon" />
+                            <img
+                                class="category_icon_small"
+                                src="./assets/icons/salad_icon.svg"
+                                alt="Salad Icon"
+                            />
+                            <img
+                                class="category_icon_big"
+                                src="./assets/icons/salad_icon.svg"
+                                alt="Salad Icon"
+                            />
                             <div class="headline_category">
                                 <h2>Salad</h2>
                             </div>
@@ -127,5 +154,23 @@
                 </div>
             </div>
         </footer>
+        <nav>
+            <ul>
+                <li>
+                    <a href="#home"
+                        ><img src="./assets/icons/home_icon.svg" alt="Home"
+                    /></a>
+                </li>
+                <li>
+                    <img src="./assets/icons/person_icon.svg" alt="Profile" />
+                </li>
+                <li>
+                    <img src="./assets/icons/paperbag_icon.svg" alt="Orders" />
+                </li>
+                <li>
+                    <img src="./assets/icons/basket_icon.svg" alt="Basket" />
+                </li>
+            </ul>
+        </nav>
     </body>
 </html>

@@ -164,16 +164,20 @@ main {
 
 .category_header {
     height: 60px;
-    width: 100%;
+    width: clamp(320px, calc(0px + 100vw), 1440px);
     margin-bottom: 30px;
     display: flex;
     align-items: flex-end;
     gap: 28px;
     padding-inline: 167px;
 
-    img {
+    .category_icon_big {
         height: 91px;
         width: auto;
+    }
+
+    .category_icon_small {
+        display: none;
     }
 
     .headline_category {
@@ -185,10 +189,10 @@ main {
 
         h2 {
             font-weight: 700;
-            font-size: 2.5rem;
+            font-size: clamp(2rem, calc(1.857rem + 0.714vw), 2.5rem);
             color: var(--font-color-light);
 
-            span {
+            .pizza {
                 font-weight: 400;
             }
         }
