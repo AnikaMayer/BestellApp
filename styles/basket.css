@@ -1,11 +1,11 @@
 .basket_outer_box {
-    width: 435px;
+    width: clamp(24.375rem, calc(17.428rem + 10.843vw), 27.188rem);
     flex-shrink: 0;
 }
 
 .basket {
     height: 794px;
-    width: 435px;
+    width: clamp(24.375rem, calc(17.428rem + 10.843vw), 27.188rem);
     background-color: var(--background-color-dark);
     padding-block: 60px;
     padding-left: 30px;
