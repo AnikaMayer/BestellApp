@@ -36,7 +36,7 @@ main {
 
 .hero_section {
     height: 580px;
-    width: clamp(320px, calc(0px + 100vw), 1440px);
+    width: clamp(320px, 100%, 1440px);
     max-width: 1440px;
     margin-bottom: 52px;
     display: flex;
@@ -159,13 +159,13 @@ main {
 
 .menu_section {
     height: auto;
-    width: fit-content;
+    width: 100%;
     padding-bottom: 100px;
 }
 
 .category_header {
     height: 60px;
-    width: clamp(320px, calc(0px + 100vw), 1440px);
+    width: clamp(320px, calc(0px + 100%), 1440px);
     margin-bottom: 30px;
     display: flex;
     align-items: flex-end;
@@ -202,7 +202,7 @@ main {
 
 .dishes {
     height: auto;
-    width: fit-content;
+    width: 100%;
     padding-inline: clamp(15px, calc(-244.337px + 25.301vw), 120px);
     display: flex;
     flex-direction: column;

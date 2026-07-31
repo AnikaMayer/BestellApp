@@ -127,6 +127,7 @@
     }
 
     .basket_outer_box {
+        width: 100%;
         flex-shrink: 1;
     }
 
@@ -258,6 +259,7 @@
 @media screen and (min-width: 700px) and (max-width: 1024px) {
     .dishes {
         padding: 0;
+        align-items: center;
 
         article {
             width: clamp(660px, calc(158.765px + 71.605vw), 892px);
@@ -296,7 +298,7 @@
 
         article {
             height: fit-content;
-            width: clamp(280px, calc(-40px + 100vw), 728px);
+            width: clamp(280px, calc(-40px + 100%), 728px);
             flex-direction: column;
             gap: 8px;
 

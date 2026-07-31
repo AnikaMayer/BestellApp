@@ -222,6 +222,7 @@ function removeItem(j) {
     } else {
         renderBasketSubTotal();
     }
+    basket.forEach((item) => changeTrashButton(item.name));
 }
 
 function changeTrashButton(name) {
