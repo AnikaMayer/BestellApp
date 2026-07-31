@@ -320,7 +320,7 @@
                 gap: 20px;
 
                 .dish_title {
-                    width: clamp(260px, calc(-54.182px + 98.182vw), 314px);
+                    width: 100%;
 
                     p {
                         width: 100%;
