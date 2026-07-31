@@ -66,6 +66,8 @@ function renderBasketCheckout() {
     basketCheckoutRef.innerHTML = renderBasketCheckoutTemplate();
 }
 
+//#endregion
+
 //#region basketMobile
 
 function toggleBasket() {
@@ -89,8 +91,6 @@ function basketButtonDesign() {
         svgRef.classList.remove("quantity_cart");
     }
 }
-
-//#endregion
 
 //#endregion
 
@@ -175,7 +175,7 @@ function addToCart(category, i) {
         renderBasketContent();
     }
     renderBasketSubTotal();
-    changeTrashButton(dishes[category][i].name);
+    basket.forEach((item) => changeTrashButton(item.name));
 }
 
 function addMoreItems(category, i) {
@@ -227,6 +227,10 @@ function removeItem(j) {
 function changeTrashButton(name) {
     const j = basket.findIndex((item) => item.name === name);
     if (j === -1) return;
+    trashButtonHelper(j);
+}
+
+function trashButtonHelper(j) {
     const btnUpRef = document.getElementById(`quantity_up${j}`);
     const btnDownRef = document.getElementById(`quantity_down${j}`);
     const btnMinusRef = document.getElementById(`btn_minus${j}`);

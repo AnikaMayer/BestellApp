@@ -1,5 +1,4 @@
 .basket_outer_box {
-    /* height: 100%; */
     width: 435px;
     flex-shrink: 0;
 }
@@ -120,7 +119,6 @@
             font-size: 22px;
             font-weight: 700;
             line-height: 120%;
-            /* width: 258px; */
         }
 
         .menu_title {
@@ -128,6 +126,7 @@
             width: 100%;
             display: flex;
             justify-content: space-between;
+            gap: 10px;
         }
 
         .menu_info {
@@ -140,7 +139,6 @@
             .menu_amount {
                 height: 29px;
                 display: flex;
-                /* gap: 4px; */
                 align-items: flex-end;
 
                 p {
