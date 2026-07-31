@@ -51,8 +51,8 @@
 
     .hero_section {
         height: 640px;
-        margin: 0;
-        gap: 106px;
+        margin-bottom: 20px;
+        gap: 115px;
         padding: 24px 16px 32px;
 
         .hero_background {
@@ -83,7 +83,6 @@
     }
 
     .content_wrapper {
-        /* max-width: 768px; */
         flex-direction: column;
     }
 
@@ -129,8 +128,6 @@
 
     .basket {
         height: 662px;
-        max-height: 90vh;
-        overflow-y: auto;
         width: 90%;
         max-width: 580px;
         position: fixed;
@@ -250,10 +247,6 @@
     .dishes {
         article {
             height: 153px;
-
-            /* .dish_image {
-                height: 100%
-            } */
         }
     }
 }
@@ -291,74 +284,6 @@
         }
     }
 }
-
-/* @media screen and (min-width: 700px) and (max-width: 768px) {
-    .dishes {
-        padding-inline: 20px;
-        align-items: center;
-
-        article {
-            height: fit-content;
-            width: 660px;
-            gap: 8px;
-
-            .dish_info {
-                height: 120px;
-                width: 100%;
-                justify-content: space-between;
-
-                .dish_title {
-                    width: 260px;
-
-                    p {
-                        width: 100%;
-                    }
-                }
-
-                .dish_price_add {
-                    width: 120px;
-                    justify-content: space-between;
-                    align-items: center;
-                }
-            }
-        }
-    }
-} */
-
-/* @media screen and (min-width: 588px) and (max-width: 699px) {
-    .dishes {
-        padding-inline: 20px;
-        align-items: center;
-
-        article {
-            height: fit-content;
-            width: clamp(280px, calc(-40px + 100vw), 728px);
-            gap: 8px;
-
-            .dish_info {
-                height: 120px;
-                width: 100%;
-                flex-direction: column;
-                justify-content: flex-end;
-
-                .dish_title {
-                    width: clamp(260px, calc(-54.182px + 98.182vw), 314px);
-
-                    p {
-                        width: 100%;
-                    }
-                }
-
-                .dish_price_add {
-                    width: 100%;
-                    flex-direction: row;
-                    justify-content: space-between;
-                    align-items: center;
-                }
-            }
-        }
-    }
-} */
 
 @media screen and (max-width: 699px) {
     .dishes {
