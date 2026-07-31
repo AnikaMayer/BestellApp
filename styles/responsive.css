@@ -127,9 +127,7 @@
     }
 
     .basket_outer_box {
-        width: 90%;
-        left: 50%;
-        transform: translateX(-50%);
+        flex-shrink: 1;
     }
 
     .basket {
