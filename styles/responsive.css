@@ -16,7 +16,7 @@
     }
 }
 
-@media screen and (min-width: 769px) {
+@media screen and (min-width: 1025px) {
     nav {
         display: none;
     }
@@ -28,7 +28,7 @@
     }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1024px) {
     .logo_menu {
         display: none;
     }
@@ -57,12 +57,10 @@
 
         .hero_background {
             height: 346px;
-            /* width: clamp(288px, calc(-32px + 100vw), 343px); */
             transform: none;
 
             .background_image {
                 height: 346px;
-                /* width: clamp(288px, calc(-32px + 100vw), 343px); */
                 border-radius: 16px;
 
                 .burger_logo {
@@ -85,7 +83,7 @@
     }
 
     .content_wrapper {
-        max-width: 768px;
+        /* max-width: 768px; */
         flex-direction: column;
     }
 
@@ -129,69 +127,23 @@
         }
     }
 
-    .dishes {
-        /* width: clamp(300px, calc(-18.182px + 99.432vw), 1000px); */
-        padding-inline: 20px;
-        align-items: center;
-
-        article {
-            height: fit-content;
-            /* width: clamp(280px, calc(-40px + 100vw), 335px); */
-            width: clamp(280px, calc(-40px + 100vw), 728px);
-            /* flex-direction: column; */
-            gap: 8px;
-
-            .dish_image {
-                /* height: 100%;
-                width: 207px; */
-
-                img {
-                    /* height: 100%;
-                    width: 207px; */
-                }
-            }
-
-            .dish_info {
-                height: fit-content;
-                width: 100%;
-                flex-direction: column;
-                justify-content: flex-end;
-
-                .dish_title {
-                    width: clamp(260px, calc(-54.182px + 98.182vw), 314px);
-
-                    p {
-                        width: 100%;
-                    }
-                }
-
-                .dish_price_add {
-                    width: 100%;
-                    flex-direction: row;
-                    justify-content: space-between;
-                    align-items: center;
-                }
-            }
-        }
-    }
-
-    .backdrop_basket {
-    }
-
     .basket {
         height: 662px;
+        max-height: 90vh;
+        overflow-y: auto;
         width: 90%;
+        max-width: 580px;
         position: fixed;
         bottom: 77px;
         top: unset;
         right: unset;
-        left: 5%;
+        left: 50%;
         border-bottom-left-radius: 0;
         border-top-right-radius: 30px;
-        padding-block: 25px;
-        padding-inline: 20px;
+        padding-block: clamp(25px, calc(18.182px + 2.131vw), 40px);
+        padding-inline: clamp(20px, calc(1.818px + 5.682vw), 60px);
         overscroll-behavior: none;
-        transform: translateY(5%);
+        transform: translateX(-50%);
 
         .basket_wrapper {
             height: 583px;
@@ -209,9 +161,11 @@
 
                     .item_card {
                         width: 98%;
+                        padding: clamp(20px, calc(17.727px + 0.71vw), 25px);
 
                         .menu_title {
                             width: 100%;
+                            gap: 20px;
                         }
 
                         .menu_info {
@@ -256,7 +210,6 @@
 
         .dialog_content {
             height: 255px;
-            /* width: 300px; */
             gap: 16px;
             padding-inline: 15px;
             padding-bottom: 40px;
@@ -291,31 +244,99 @@
     }
 }
 
-@media screen and (max-width: 587px) {
+/* #region dishes */
+
+@media screen and (min-width: 1025px) and (max-width: 1055px) {
     .dishes {
-        /* width: clamp(300px, calc(-18.182px + 99.432vw), 1000px); */
+        article {
+            height: 153px;
+
+            /* .dish_image {
+                height: 100%
+            } */
+        }
+    }
+}
+
+@media screen and (min-width: 700px) and (max-width: 1024px) {
+    .dishes {
+        padding: 0;
+
+        article {
+            width: clamp(660px, calc(158.765px + 71.605vw), 892px);
+
+            .dish_image {
+                height: 100%;
+                width: clamp(207px, calc(47.169px + 20.784vw), 260px);
+
+                img {
+                    height: 100%;
+                    width: clamp(207px, calc(47.169px + 20.784vw), 260px);
+                }
+            }
+
+            .dish_info {
+                height: 100%;
+                width: 100%;
+                justify-content: space-between;
+
+                .dish_title {
+                    width: clamp(300px, calc(183.333px + 16.667vw), 354px);
+
+                    p {
+                        width: clamp(280px, calc(152.531px + 18.21vw), 339px);
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* @media screen and (min-width: 700px) and (max-width: 768px) {
+    .dishes {
         padding-inline: 20px;
         align-items: center;
 
         article {
             height: fit-content;
-            /* width: clamp(280px, calc(-40px + 100vw), 335px); */
-            width: clamp(280px, calc(-40px + 100vw), 728px);
-            flex-direction: column;
+            width: 660px;
             gap: 8px;
 
-            .dish_image {
-                height: clamp(86px, calc(33.266px + 16.479vw), 130px);
+            .dish_info {
+                height: 120px;
                 width: 100%;
+                justify-content: space-between;
 
-                img {
-                    height: clamp(86px, calc(33.266px + 16.479vw), 130px);
-                    width: 100%;
+                .dish_title {
+                    width: 260px;
+
+                    p {
+                        width: 100%;
+                    }
+                }
+
+                .dish_price_add {
+                    width: 120px;
+                    justify-content: space-between;
+                    align-items: center;
                 }
             }
+        }
+    }
+} */
+
+/* @media screen and (min-width: 588px) and (max-width: 699px) {
+    .dishes {
+        padding-inline: 20px;
+        align-items: center;
+
+        article {
+            height: fit-content;
+            width: clamp(280px, calc(-40px + 100vw), 728px);
+            gap: 8px;
 
             .dish_info {
-                height: fit-content;
+                height: 120px;
                 width: 100%;
                 flex-direction: column;
                 justify-content: flex-end;
@@ -337,4 +358,53 @@
             }
         }
     }
+} */
+
+@media screen and (max-width: 699px) {
+    .dishes {
+        padding-inline: 20px;
+        align-items: center;
+
+        article {
+            height: fit-content;
+            width: clamp(280px, calc(-40px + 100vw), 728px);
+            flex-direction: column;
+            gap: 8px;
+
+            .dish_image {
+                height: clamp(86px, calc(33.266px + 16.479vw), 130px);
+                width: 100%;
+
+                img {
+                    height: clamp(86px, calc(33.266px + 16.479vw), 130px);
+                    width: 100%;
+                }
+            }
+
+            .dish_info {
+                height: fit-content;
+                width: 100%;
+                flex-direction: column;
+                justify-content: flex-end;
+                gap: 20px;
+
+                .dish_title {
+                    width: clamp(260px, calc(-54.182px + 98.182vw), 314px);
+
+                    p {
+                        width: 100%;
+                    }
+                }
+
+                .dish_price_add {
+                    width: 100%;
+                    flex-direction: row;
+                    justify-content: space-between;
+                    align-items: center;
+                }
+            }
+        }
+    }
 }
+
+/* #endregion */

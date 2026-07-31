@@ -144,7 +144,8 @@ main {
 
 .menu_wrapper {
     height: fit-content;
-    width: 833px;
+    /* width: 833px; */
+    width: 60%;
     position: static;
 }
 
@@ -170,7 +171,8 @@ main {
     display: flex;
     align-items: flex-end;
     gap: 28px;
-    padding-inline: 167px;
+    /* padding-inline: clamp(90px, calc(1.754px + 11.475vw), 167px); */
+    padding-inline: clamp(20px, calc(-343.072px + 35.422vw), 167px);
 
     .category_icon_big {
         height: 91px;
@@ -203,14 +205,15 @@ main {
 .dishes {
     height: auto;
     width: fit-content;
-    padding-left: 120px;
+    /* padding-left: clamp(40px, calc(-51.684px + 11.923vw), 120px); */
+    padding-inline: clamp(15px, calc(-244.337px + 25.301vw), 120px);
     display: flex;
     flex-direction: column;
     gap: 16px;
 
     article {
         height: 141px;
-        width: 713px;
+        width: clamp(595px, calc(303.554px + 28.434vw), 713px);
         border-radius: 12px;
         background-color: var(--background-color-light);
         display: flex;
@@ -218,26 +221,29 @@ main {
         padding: 10px;
 
         .dish_image {
-            height: 120px;
-            width: 207px;
+            height: 100%;
+            width: clamp(175px, calc(95.964px + 7.711vw), 207px);
             border-radius: 12px;
 
             img {
-                height: 120px;
-                width: 207px;
+                height: 100%;
+                width: clamp(175px, calc(95.964px + 7.711vw), 207px);
                 border-radius: 12px;
                 object-fit: cover;
             }
         }
 
         .dish_info {
-            height: 107px;
-            width: 469px;
+            /* height: 107px; */
+            height: 100%;
+            /* width: 469px; */
+            width: clamp(390px, calc(194.88px + 19.036vw), 469px);
             display: flex;
 
             .dish_title {
                 height: 100%;
-                width: 354px;
+                /* width: 354px; */
+                width: clamp(270px, calc(62.53px + 20.241vw), 354px);
                 display: flex;
                 flex-direction: column;
                 gap: 8px;
@@ -251,7 +257,8 @@ main {
                 p {
                     font-weight: 500;
                     font-size: 1rem;
-                    width: 339px;
+                    /* width: 339px; */
+                    width: clamp(260px, calc(64.88px + 19.036vw), 339px);
                 }
             }
 

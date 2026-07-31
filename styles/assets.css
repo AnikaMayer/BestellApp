@@ -107,9 +107,9 @@
 
 nav {
     height: 78px;
-    width: clamp(320px, calc(0px + 100vw), 768px);
+    width: 100%;
     background-color: var(--background-color-dark);
-    padding: 24px clamp(25px, calc(-28.571px + 16.741vw), 100px);
+    padding: 24px clamp(25px, calc(-31.818px + 17.756vw), 150px);
     position: fixed;
     bottom: 0;
     z-index: 2;
